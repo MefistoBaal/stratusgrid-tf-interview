@@ -32,7 +32,7 @@ In this repo you will found a file called *[terraform.tfvars.template](terraform
 
 ## Github Connection
 
-After a `terraform apply` successfully, you should go to AWS Developer Tools > Setting > Connections and then finish the configuration of the Github connection to allow CodePipeline to get repository content and be able to deploy in S3 Bucket.
+After a `terraform apply` successfully, you should go to AWS Developer Tools > Setting > Connections and then finish the configuration of the Github connection to allow CodePipeline to get repository content and be able to deploy in S3 Bucket. This configuration should be done manually.
 
 # About this module
 
