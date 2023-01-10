@@ -2,6 +2,8 @@
 resource "aws_codestarconnections_connection" "github" {
   name          = var.github_connection_name
   provider_type = "GitHub"
+
+  tags = var.tags
 }
 
 # Build IAM Role for Codepipeline
@@ -22,11 +24,14 @@ resource "aws_iam_role" "this" {
   ]
 }
   EOF
+
+  tags = var.tags
 }
 
 # Build S3 Artifact Storage
 resource "aws_s3_bucket" "this" {
   bucket = "${var.codepipeline_name}-artifact-storage"
+  tags_all = var.tags
 }
 
 # Build S3 ACL
@@ -119,4 +124,6 @@ resource "aws_codepipeline" "this" {
       }
     }
   }
+
+  tags = var.tags
 }

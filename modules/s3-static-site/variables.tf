@@ -5,7 +5,7 @@ variable "s3_bucket_name" {
 }
 
 variable "tags" {
-  type        = list(string)
+  type        = map(string)
   description = "Tags to be added to the module"
-  default     = []
+  default     = {}
 }

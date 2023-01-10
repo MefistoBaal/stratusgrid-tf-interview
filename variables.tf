@@ -35,3 +35,8 @@ variable "repository_branch" {
   description = "Repository branch that trigger the CICD process"
   default     = "master"
 }
+
+variable "source_repo" {
+  type = string
+  default = "https://github.com/MefistoBaal/stratusgrid-tf-interview"
+}

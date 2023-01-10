@@ -29,3 +29,9 @@ variable "acm_certificate_arn" {
   default     = ""
   description = "ACM Certificated allowed to be used by Cloudfront | SSL"
 }
+
+variable "tags" {
+  type        = map(string)
+  description = "Tags to be added to the module"
+  default     = {}
+}

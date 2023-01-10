@@ -30,6 +30,10 @@ terragrunt init
 
 In this repo you will found a file called *[terraform.tfvars.template](terraform.tfvars.template)*. You will only need to copy and rename the file to `terraform.tfvars` and change the values for your own values.
 
+## Github Connection
+
+After a `terraform apply` successfully, you should go to AWS Developer Tools > Setting > Connections and then finish the configuration of the Github connection to allow CodePipeline to get repository content and be able to deploy in S3 Bucket.
+
 # About this module
 
 <!-- BEGIN_TF_DOCS -->

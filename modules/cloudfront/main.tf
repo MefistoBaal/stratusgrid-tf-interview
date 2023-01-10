@@ -84,6 +84,8 @@ resource "aws_cloudfront_distribution" "this" {
     # Using the default cloudfront certificate
     cloudfront_default_certificate = true
   }
+
+  tags = var.tags
 }
 
 # Allow Cloudfront to access s3 objects
