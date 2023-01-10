@@ -66,8 +66,12 @@ No resources.
 |------|-------------|------|---------|:--------:|
 | <a name="input_aws_account"></a> [aws\_account](#input\_aws\_account) | The AWS Account ID used | `string` | n/a | yes |
 | <a name="input_aws_region"></a> [aws\_region](#input\_aws\_region) | AWS Region | `string` | `"us-east-1"` | no |
+| <a name="input_codepipeline_name"></a> [codepipeline\_name](#input\_codepipeline\_name) | Name of Codepipeline pipe | `string` | n/a | yes |
 | <a name="input_environment"></a> [environment](#input\_environment) | The Enviroment where this module are deployed | `string` | `"dev"` | no |
+| <a name="input_github_repository"></a> [github\_repository](#input\_github\_repository) | account/repository path of GitHub | `string` | n/a | yes |
+| <a name="input_repository_branch"></a> [repository\_branch](#input\_repository\_branch) | Repository branch that trigger the CICD process | `string` | `"master"` | no |
 | <a name="input_s3_static_site_bucket_name"></a> [s3\_static\_site\_bucket\_name](#input\_s3\_static\_site\_bucket\_name) | Static site bucket name | `string` | n/a | yes |
+| <a name="input_source_repo"></a> [source\_repo](#input\_source\_repo) | n/a | `string` | `"https://github.com/MefistoBaal/stratusgrid-tf-interview"` | no |
 
 ## Outputs
 
