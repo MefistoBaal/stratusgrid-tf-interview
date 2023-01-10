@@ -1,0 +1,5 @@
+aws_account                = ""
+aws_region                 = "us-east-1"
+s3_static_site_bucket_name = "static-site-bucket-stratusgrid"
+codepipeline_name          = "stratusgridstaticwebsite"
+github_repository          = "MefistoBaal/stratusgrid-static-site-interview"
