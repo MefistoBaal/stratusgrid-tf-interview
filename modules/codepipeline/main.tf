@@ -30,7 +30,7 @@ resource "aws_iam_role" "this" {
 
 # Build S3 Artifact Storage
 resource "aws_s3_bucket" "this" {
-  bucket = "${var.codepipeline_name}-artifact-storage"
+  bucket   = "${var.codepipeline_name}-artifact-storage"
   tags_all = var.tags
 }
 
@@ -61,6 +61,12 @@ data "aws_iam_policy_document" "s3_policy" {
   statement {
     actions   = ["codestar-connections:UseConnection"]
     resources = [aws_codestarconnections_connection.github.arn]
+  }
+
+  # Lambda
+  statement {
+    actions   = ["lambda:*"]
+    resources = [module.invalidate_cache_lambda.lambda_function_arn]
   }
 
   # Codebuild
@@ -121,6 +127,22 @@ resource "aws_codepipeline" "this" {
       configuration = {
         BucketName = var.s3_bucket_name
         Extract    = "true"
+      }
+    }
+  }
+
+  stage {
+    name = "CacheInvalidation"
+    action {
+      name            = "InvalidateCache"
+      category        = "Invoke"
+      owner           = "AWS"
+      provider        = "Lambda"
+      input_artifacts = ["source_output"]
+      version         = 1
+      configuration = {
+        FunctionName   = module.invalidate_cache_lambda.lambda_function_name
+        UserParameters = "{\"distributionId\": \"${var.cloudfront_id}\", \"objectPaths\": [\"/*\"]}"
       }
     }
   }

@@ -30,7 +30,7 @@ No modules.
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | <a name="input_s3_bucket_name"></a> [s3\_bucket\_name](#input\_s3\_bucket\_name) | Static Site Bucket Name | `string` | n/a | yes |
-| <a name="input_tags"></a> [tags](#input\_tags) | Tags to be added to the module | `list(string)` | `[]` | no |
+| <a name="input_tags"></a> [tags](#input\_tags) | Tags to be added to the module | `map(string)` | `{}` | no |
 
 ## Outputs
 

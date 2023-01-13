@@ -35,10 +35,12 @@ No modules.
 | <a name="input_s3_bucket_arn"></a> [s3\_bucket\_arn](#input\_s3\_bucket\_arn) | S3 Bucket ARN to use as origin | `string` | n/a | yes |
 | <a name="input_s3_bucket_name"></a> [s3\_bucket\_name](#input\_s3\_bucket\_name) | S3 bucket name | `string` | n/a | yes |
 | <a name="input_s3_bucket_regional_domain_name"></a> [s3\_bucket\_regional\_domain\_name](#input\_s3\_bucket\_regional\_domain\_name) | Generated S3 regional domain name | `string` | n/a | yes |
+| <a name="input_tags"></a> [tags](#input\_tags) | Tags to be added to the module | `map(string)` | `{}` | no |
 
 ## Outputs
 
 | Name | Description |
 |------|-------------|
+| <a name="output_cloudfront_id"></a> [cloudfront\_id](#output\_cloudfront\_id) | Cloudfront destribution id |
 | <a name="output_cloudfront_url"></a> [cloudfront\_url](#output\_cloudfront\_url) | Public domain where distribution is exposed |
 <!-- END_TF_DOCS -->

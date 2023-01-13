@@ -37,6 +37,6 @@ variable "repository_branch" {
 }
 
 variable "source_repo" {
-  type = string
+  type    = string
   default = "https://github.com/MefistoBaal/stratusgrid-tf-interview"
 }

@@ -27,3 +27,8 @@ variable "tags" {
   description = "Tags to be added to the module"
   default     = {}
 }
+
+variable "cloudfront_id" {
+  type        = string
+  description = "Cloudfront distribution Id where static site are deployed"
+}
